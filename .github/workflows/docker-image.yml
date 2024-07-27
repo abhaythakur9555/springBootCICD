@@ -1,4 +1,4 @@
-name:demo
+name:demo_docker
 on: push
 jobs:
     name:Build Docker Images
