@@ -11,10 +11,8 @@ jobs:
       - name: Publish to GitHub Packages
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.PERSONAL_TOKEN }} --password-stdin
-          repository: ${{ github.repository }}/next
-          tags: latest,${{ github.run_number }}
+         run: echo "${{ secrets.PERSONAL_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v1
         with:
