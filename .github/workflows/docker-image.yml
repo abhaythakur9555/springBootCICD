@@ -1,11 +1,8 @@
 name:  Docker Image CI_Demo
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: push
 jobs:
+  build-container:
+    name: Build Docker Images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
