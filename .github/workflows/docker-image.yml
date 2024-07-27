@@ -1,3 +1,4 @@
+
 name:  Docker Image CI_Demo
 on: push
 jobs:
@@ -7,11 +8,19 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Publish to GitHub Packages
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ github.actor }}
+          password: ${{ secrets.PERSONAL_TOKEN }}
+          registry: github.com
+          repository: ${{ github.repository }}/next
+          tags: latest,${{ github.run_number }}
       - name: Publish to Docker Hub
         uses: docker/build-push-action@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          registry: github.com
+          registry: docker.pkg.github.com
           repository: demo_docker/next
           tags: latest,${{ github.run_number }}
