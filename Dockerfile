@@ -1,3 +1,5 @@
 FROM openjdk:8-jdk-alpine
 
-COPY app.jar /
+WORKDIR /app
+
+COPY ./app /app.jar
