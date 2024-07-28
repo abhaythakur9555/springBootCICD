@@ -1,4 +1,4 @@
-FROM openjdk11:alpine-jre
+FROM openjdk:11-jre-slim
 EXPOSE 8080
 ARG APP_NAME="spring_boot_ci_cd"
 ARG APP_VERSION="0.0.1"
