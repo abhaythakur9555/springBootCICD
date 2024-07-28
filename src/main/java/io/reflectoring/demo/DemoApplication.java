@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 	
-	/*@GetMapping("/")
+	@GetMapping("/")
 	public String home()
 	{
 		return "Hello java";
-	}*/
+	}
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
 		System.out.println("this is docker demo");
+		SpringApplication.run(DemoApplication.class, args);
 	}
 }
