@@ -1,4 +1,4 @@
-FROM openjdk:17-jre
+FROM openjdk:17-jdk-alpine
 EXPOSE 8080
 ARG APP_NAME="demo-0.0.1-SNAPSHOT"
 ARG JAR_FILE=${APP_NAME}.jar
