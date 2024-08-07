@@ -12,11 +12,11 @@ public class DemoApplication {
 	@RequestMapping("/home")
 	public String home()
 	{
-		return "Hello java from docker";
+		return "Hello java from docker, and successfully done";
 	}
 
 	public static void main(String[] args) {
-		System.out.println("this is docker demo");
+		System.out.println("this is docker demo running....");
 		SpringApplication.run(DemoApplication.class, args);
 	}
 }
