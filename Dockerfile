@@ -1,6 +1,5 @@
-FROM openjdk:11-jre
+
+FROM openjdk:17-jdk-alpine
 EXPOSE 8080
-ARG APP_NAME="spring_boot_ci_cd"
-ARG JAR_FILE=${APP_NAME}.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
+ADD target/spring_boot_docker.jar spring_boot_docker.jar
+ENTRYPOINT ["java","-jar","/spring_boot_docker.jar"]
